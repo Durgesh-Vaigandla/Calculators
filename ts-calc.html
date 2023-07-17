@@ -13,7 +13,7 @@
 <body>
 
     <!--Nav Bar-->
-    <nav class="navbar">
+    <nav id="nav-bar" class="navbar">
         <div class="container">
             <ul class="navbar-nav">
                 <li class="nav-item Active">
@@ -31,24 +31,28 @@
             </ul>
         </div>
     </nav>
-    <h1>AP Diploma Final Percentage Calculator</h1>
+    <h1>TS Diploma Final Percentage Calculator</h1>
     <div class="card">
         <form id="marksCalc" method="post">
             <section>
-                <label for="1stSem">Enter Your 1st Year Marks:</label>
+                <label for="1stSem">Enter Your 1st Sem Marks:</label>
                 <input type="number" name="" id="1stSem" max="1000" placeholder="Enter Marks" value="">
             </section>
             <section>
+                <label for="2ndSem">Enter Your 2nd Sem Marks:</label>
+                <input type="number" name="" id="2ndSem" max="1000" placeholder="Enter Marks" value="">
+            </section>
+            <section>
                 <label for="3rdSem">Enter Your 3rd Sem Marks:</label>
-                <input type="number" name="" id="3rdSem" max="900" placeholder="Enter Marks" value="">
+                <input type="number" name="" id="3rdSem" max="1000" placeholder="Enter Marks" value="">
             </section>
             <section>
                 <label for="4thSem">Enter You 4th Sem Marks: </label>
-                <input type="number" name="" id="4thSem" max="900" placeholder="Enter Marks" value="">
+                <input type="number" name="" id="4thSem" max="1000" placeholder="Enter Marks" value="">
             </section>
             <section>
                 <label for="5thSem">Enter You 5th Sem Marks: </label>
-                <input type="number" name="" id="5thSem" max="900" placeholder="Enter Marks" value="">
+                <input type="number" name="" id="5thSem" max="1000" placeholder="Enter Marks" value="">
             </section>
             <section>
                 <label for="6thSem">Enter You 6th Sem Marks: </label>
@@ -74,29 +78,36 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>I Year</td>
+                    <td>I Semester</td>
                     <td>1000</td>
                     <td id="1stSemSecured">-</td>
                     <td id="1stSemFigure">-</td>
                     <td id="1stSemWord">-</td>
                 </tr>
                 <tr>
+                    <td>II Semester</td>
+                    <td>1000</td>
+                    <td id="2ndSemSecured">-</td>
+                    <td id="2ndSemFigure">-</td>
+                    <td id="2ndSemWord">-</td>
+                </tr>
+                <tr>
                     <td>III Semester</td>
-                    <td>900</td>
+                    <td>1000</td>
                     <td id="3rdSemSecured">-</td>
                     <td id="3rdSemFigure">-</td>
                     <td id="3rdSemWord">-</td>
                 </tr>
                 <tr>
                     <td>IV Semester</td>
-                    <td>900</td>
+                    <td>1000</td>
                     <td id="4thSemSecured">-</td>
                     <td id="4thSemFigure">-</td>
                     <td id="4thSemWord">-</td>
                 </tr>
                 <tr>
                     <td>V Semester</td>
-                    <td>900</td>
+                    <td>1000</td>
                     <td id="5thSemSecured">-</td>
                     <td id="5thSemFigure">-</td>
                     <td id="5thSemWord">-</td>
@@ -128,6 +139,7 @@
     <script>
         function printTable() {
             // Hide the input fields and labels
+            document.getElementById("nav-bar").style.display = "none"
             document.getElementById("marksCalc").style.display = "none";
             document.getElementById("printButton").style.display = "none";
 
@@ -135,23 +147,24 @@
             window.print();
 
             // Show the input fields and labels again after printing
+            document.getElementById("nav-bar").style.display = "block"
             document.getElementById("marksCalc").style.display = "block";
             document.getElementById("printButton").style.display = "block";
 
         }
     </script>
-    <script src="./ap-calculation.js"></script>
+    <script src="./ts-calculation.js"></script>
     <script>
         const input = document.getElementById('1stSem');
-      
-        input.addEventListener('click', function() {
-          input.parentElement.classList.add('zoomed');
+
+        input.addEventListener('click', function () {
+            input.parentElement.classList.add('zoomed');
         });
-      
-        input.addEventListener('blur', function() {
-          input.parentElement.classList.remove('zoomed');
+
+        input.addEventListener('blur', function () {
+            input.parentElement.classList.remove('zoomed');
         });
-      </script>
+    </script>
 </body>
 
 </html>
