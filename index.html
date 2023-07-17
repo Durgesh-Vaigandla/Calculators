@@ -128,6 +128,7 @@
     <script>
         function printTable() {
             // Hide the input fields and labels
+            document.getElementById("nav-bar").style.display = "none"
             document.getElementById("marksCalc").style.display = "none";
             document.getElementById("printButton").style.display = "none";
 
@@ -135,6 +136,7 @@
             window.print();
 
             // Show the input fields and labels again after printing
+            document.getElementById("nav-bar").style.display = "block"
             document.getElementById("marksCalc").style.display = "block";
             document.getElementById("printButton").style.display = "block";
 
@@ -143,15 +145,15 @@
     <script src="./ap-calculation.js"></script>
     <script>
         const input = document.getElementById('1stSem');
-      
-        input.addEventListener('click', function() {
-          input.parentElement.classList.add('zoomed');
+
+        input.addEventListener('click', function () {
+            input.parentElement.classList.add('zoomed');
         });
-      
-        input.addEventListener('blur', function() {
-          input.parentElement.classList.remove('zoomed');
+
+        input.addEventListener('blur', function () {
+            input.parentElement.classList.remove('zoomed');
         });
-      </script>
+    </script>
 </body>
 
 </html>
