@@ -49,6 +49,38 @@ document.getElementById("marksCalc").addEventListener("submit", function (event)
     document.getElementById("totalWord").innerHTML = numberToWord(finalResult);
     document.getElementById("totalMarks").innerHTML = finalResult;
     document.getElementById("totalPercentage").innerHTML = (Percentage.toFixed(2) + "%");
+    document.getElementById("Student-info").style.display = "block"
 
     document.getElementById("marksCalc").reset();
+});
+document.getElementById("Student-info").addEventListener("submit", function (event) {
+    event.preventDefault();
+    let fullName = document.getElementById("fName").value;
+    let diplomaPin = document.getElementById("dPin").value;
+
+    let test1 = fullName.trim();
+    let test2 = diplomaPin.trim();
+
+    if (test1 === "" || test2 === "") {
+        alert("Kindly Enter Your Name and Pin Number");
+    } else {
+        document.getElementById("student-details").innerHTML = "Name: " + fullName + "<br>PIN: " + diplomaPin;
+        // Hide the input fields and labels
+        document.getElementById("nav-bar").style.display = "none";
+        document.getElementById("marksCalc").style.display = "none";
+        document.getElementById("printButton").style.display = "none";
+        document.getElementById("student-details").style.display = "block";
+        document.getElementById("Student-info").style.display = "none";
+
+        // Print only the table
+        window.print();
+
+        // Show the input fields and labels again after printing
+        document.getElementById("nav-bar").style.display = "block";
+        document.getElementById("marksCalc").style.display = "block";
+        document.getElementById("printButton").style.display = "block";
+        document.getElementById("student-details").style.display = "none";
+        document.getElementById("Student-info").style.display = "block";
+        document.getElementById("Student-info").reset();
+    }
 });

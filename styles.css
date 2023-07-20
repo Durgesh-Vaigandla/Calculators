@@ -39,11 +39,6 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-form input:active {
-    zoom: 1.2;
-}
-
-
 h1 {
     text-align: center;
     margin: 0px auto;
@@ -66,8 +61,32 @@ h1 {
     display: block;
     color: #333;
 }
-
 #marksCalc input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+#Student-info {
+    padding: 30px;
+    border-radius: 5px;
+    max-width: 500px;
+    border: 2px solid black;
+    margin: 0 auto;
+    display: none;
+}
+
+#Student-info section {
+    margin-bottom: 20px;
+}
+
+#Student info {
+    display: block;
+    color: #333;
+}
+
+#Student-info input[type="text"] {
     width: 100%;
     padding: 8px;
     font-size: 16px;
@@ -135,7 +154,9 @@ tbody td:nth-child(1) {
     margin: 0 auto;
     padding: 10px;
 }
-
+.student-details{
+    display: none;
+}
 @media (max-width: 768px) {
     body {
         zoom: 60%;
@@ -176,6 +197,9 @@ tbody td:nth-child(1) {
     #marksCalc section {
         display: none;
     }
+    .student-details{
+        display: block;
+    }
 
 
     /* Additional styles for table */
@@ -195,7 +219,7 @@ tbody td:nth-child(1) {
     td {
         border: 1px solid #ddd;
         padding: 8px;
-        font-size: 15px;
+        font-size: 20px;
     }
 
     thead th {

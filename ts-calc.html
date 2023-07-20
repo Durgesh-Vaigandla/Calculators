@@ -61,6 +61,7 @@
             <button type="submit">Submit</button>
         </form>
     </div>
+    <div  id="student-details"></div>
     <div id="result">
 
         <table>
@@ -133,26 +134,26 @@
                 </tr>
             </tbody>
         </table>
-        <button id="printButton" class="printBtn" onclick="printTable()">Print <i class="fa-solid fa-print"
-                style="color: #ffffff;"></i></button>
+        <div class="card">
+            <form method="post" id="Student-info">
+                <section>
+                    <label for="name">Enter Your Full Name:</label>
+                    <input type="text" name="" id="fName" placeholder="Enter Name" >
+                </section>
+                <section>
+                    <label for="">Enter Your Diploma PIN No.:</label>
+                    <input type="text" name="" id="dPin" placeholder="Enter PIN No." >
+                </section>
+                <button id="printButton" type="submit" class="printBtn">Print <i class="fa-solid fa-print"
+                        style="color: #ffffff;"></i></button>
+            </form>
+        </div>
+
     </div>
-    <script>
-        function printTable() {
-            // Hide the input fields and labels
-            document.getElementById("nav-bar").style.display = "none"
-            document.getElementById("marksCalc").style.display = "none";
-            document.getElementById("printButton").style.display = "none";
+    <footer style=" text-align: center; margin-top: 50px; background-color: #eee; padding: 20px; font-size: 1rem;">
+        Made with &hearts; by Durgesh
+    </footer>
 
-            // Print only the table
-            window.print();
-
-            // Show the input fields and labels again after printing
-            document.getElementById("nav-bar").style.display = "block"
-            document.getElementById("marksCalc").style.display = "block";
-            document.getElementById("printButton").style.display = "block";
-
-        }
-    </script>
     <script src="./ts-calculation.js"></script>
     <script>
         const input = document.getElementById('1stSem');
