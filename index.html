@@ -12,12 +12,6 @@
 </head>
 
 <body>
-    <style>
-        .fadeIn {
-    opacity: 0;
-    transition: opacity 0.5s ease-in;
-        }
-    </style>
 
     <!--Nav Bar-->
     <nav id="nav-bar" class="navbar">
@@ -65,7 +59,7 @@
             <button type="submit">Submit</button>
         </form>
     </div>
-    <div id="result" class="fadeIn">
+    <div id="result">
         <div class="details" id="student-details"></div>
         <table>
             <thead>
@@ -161,18 +155,7 @@
             input.parentElement.classList.remove('zoomed');
         });
     </script>
-    <script>
-        const resultDiv = document.getElementById('result');
-
-window.addEventListener('scroll', function () {
-    if (window.scrollY > 200) {
-        resultDiv.classList.add('fadeIn');
-    } else {
-        resultDiv.classList.remove('fadeIn');
-    }
-});
-
-    </script>
+   
 </body>
 
 </html>
