@@ -1,0 +1,99 @@
+/*Custome Scroll bar*/
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+
+.navbar {
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar img {
+    height: auto;
+    width: 35px;
+    margin-left: 5px;
+}
+
+#bars {
+    display: none;
+}
+
+.nav-element {
+    display: flex;
+    gap: 2vw;
+}
+
+h1 {
+    margin-left: 30px;
+    color: #000000;
+    font-size: 1.8rem;
+}
+
+.nav-element>h4:last-child {
+    margin-right: 35vw;
+}
+
+h4 a {
+    font-size: large;
+    text-decoration: none;
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+h4 a:hover {
+    color: #e74c3c;
+}
+
+footer {
+    text-align: center;
+    background-color: #dadada;
+    color: #000000;
+    padding: 10px;
+    font-size: 1rem;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar{
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .nav-bar{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav-element{
+        width: 100%;
+        justify-content: center;
+        align-items: center ;
+    }
+    .nav-element a{
+        font-size: medium;
+    }
+    .nav-element>h4:last-child {
+        margin-right: 0;
+    }
+}

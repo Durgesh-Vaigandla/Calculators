@@ -6,84 +6,11 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-}
-
-nav {
-    height: 9vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #c673f7;
-    /* background-color: #3498db;*/
-}
-
-.nav-bar {
-    display: flex;
-}
-
-.nav-bar img {
-    height: 40px;
-    width: 40px;
-    margin-left: 5px;
-}
-
-#bars {
-    display: none;
-}
-
-.nav-elements {
-    display: flex;
-    gap: 2vw;
-}
-
-h1 {
-    margin-left: 30px;
-    color: #fff;
-    font-size: 1.8rem;
-}
-
-.nav-elements>h4:last-child {
-    margin-right: 30px;
-}
-
-h4 a {
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s ease;
-}
-
-h4 a:hover {
-    color: #e74c3c;
+    background-color: #ffffff;
 }
 
 h3 {
     text-align: center;
-}
-
-.navigator {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-}
-
-.navigator button {
-    width: 8vw;
-    height: 7vh;
-    font-size: 1rem;
-    margin: 15px 5px 5px 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #e0e0e0;
-    transition: background-color 0.3s ease;
-    padding: 0;
-}
-
-button .active {
-    background-color: #c673f7;
 }
 
 .container {
@@ -97,7 +24,7 @@ button .active {
 .calculator {
     display: flex;
     width: 30vw;
-    border: 5px solid #c673f7;
+    border: 5px solid #000000;
     background-color: #fff;
     justify-content: center;
     align-items: center;
@@ -113,7 +40,7 @@ button .active {
     font-size: 2rem;
     text-align: right;
     padding-right: 10px;
-    border: 3px solid #c673f7;
+    border: 3px solid #000000;
     outline: none;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -161,61 +88,15 @@ button .active {
     width: 9vw;
 }
 
-/*Length and Mass Converter*/
-#lengthContainer,
-#massContainer {
+.converters{
     display: flex;
-    display: none;
-    justify-content: center;
-    height: 60vh;
-    padding: 0;
-    margin: 10px;
-}
-
-#lengthConverter,
-#massConverter {
-    display: flex;
-    flex-direction: column;
-    border: 2px solid #c673f7;
+    height: 50vh;
     align-items: center;
-    padding: 20px;
-}
-
-.selector {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    margin: 15px;
-}
-
-#lengthConverter .lengthInput,
-.massInput {
-    margin: 10px;
-}
-
-.buttons button {
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #0bcc38;
-    border: none;
-}
-
-#result {
-    margin: 10px;
+    justify-content: center;
+    gap: 10px;
 }
 
 
-footer {
-    text-align: center;
-    background-color: #c673f7;
-    color: #fff;
-    padding: 10px;
-    font-size: 1rem;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
 
 @media (max-width: 600px) {
     h1 {
@@ -255,28 +136,8 @@ footer {
         width: 27vw;
     }
 
-    .buttons button {
-        width: 25vw;
-        padding: 10px;
-        border-radius: 5px;
-        background-color: #0bcc38;
-        border: none;
+    .converters{
+        display: flex;
+        flex-wrap: wrap;
     }
-
-    .navigator button{
-        width: 30vw;
-        height: 5vh;
-    }
-
-    .buttons button {
-        padding: 10px;
-        border-radius: 5px;
-        background-color: #0bcc38;
-        border: none;
-    }
-
-    #result {
-        margin: 10px;
-    }
-
 }
