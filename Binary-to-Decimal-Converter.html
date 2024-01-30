@@ -34,37 +34,29 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Decimal to Binary Converter</li>
+            <li class="breadcrumb-item active" aria-current="page">Binary to Decimal Converter</li>
         </ol>
     </nav>
     <h1 class="heading">Binary to Decimal Converter</h1>
     <div class="container">
         <label for="binaryInput">Enter a Binary number:</label>
-        <input type="text" id="binaryInput" placeholder="Enter Binary Number (eg: 10)">
+        <input type="text" id="binaryInput" oninput="validateBinaryInput()"
+            placeholder="Enter Binary Number (0's and 1's)">
         <div class="btns">
-            <button class="btn btn-success" onclick="convertDecimalToBinary()">=Convert</button>
+            <button class="btn btn-success" onclick="convertBinaryToDecimal()">=Convert</button>
             <button class="btn btn-success" id="reset">×Reset</button>
             <button class="btn btn-success" id="swap">⇅Swap</button>
 
         </div>
-        <textarea name="" id="hexOutput" cols="1" rows="1"></textarea>
+        <textarea name="" id="decimalOutput" cols="1" rows="1"></textarea>
 
     </div>
 
     <script>
-        function convertDecimalToBinary() {
-            const decimalInput = document.getElementById("binaryInput").value;
-
-            // Validate if the input is a valid decimal number
-            if (!/^[0-9]+$/.test(decimalInput)) {
-                alert("Please enter a valid decimal number.");
-                return;
-            }
-
-            // Convert decimal to binary
-            const binary = parseInt(decimalInput, 10).toString(2);
-
-            document.getElementById("hexOutput").textContent = binary;
+        function convertBinaryToDecimal() {
+            const binaryInput = document.getElementById("binaryInput").value;
+            const decimalOutput = parseInt(binaryInput, 2);
+            document.getElementById("decimalOutput").textContent = decimalOutput;
         }
 
         function validateBinaryInput() {
