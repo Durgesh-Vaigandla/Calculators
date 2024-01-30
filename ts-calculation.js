@@ -1,5 +1,5 @@
 document.getElementById("marksCalc").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form submission from refreshing the page
+    event.preventDefault();
 
     function numberToWord(number) {
         const words = ["ZERO", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"];
