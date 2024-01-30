@@ -138,6 +138,11 @@ tbody td:nth-child(1) {
         /* Adjust the scale value as needed */
     }
 
+    .card-input{
+        width: max-content;
+        margin: 0 auto;
+    }
+
     #marksCalc {
         margin-left: 20px;
     }

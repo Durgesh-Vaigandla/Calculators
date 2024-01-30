@@ -14,7 +14,7 @@
     <!--BootStrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Decimal To Binary Converter | Durgesh Vaigandla</title>
+    <title>HexaDecimal to Binary Converter | Durgesh Vaigandla</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
     <div class="navbar">
         <div class="nav-bar">
             <h1>Calculator</h1>
-            <img src="./calculator.png" alt="">
+            <img src="./calculator.png" alt="Logo">
         </div>
         <div class="nav-element">
             <h4><a href="./index.html">Home <i class="fa fa-home"></i><span></span></a></h4>
@@ -34,57 +34,45 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Decimal to Binary Converter</li>
+            <li class="breadcrumb-item active" aria-current="page">HexaDecimal to Binary Converter</li>
         </ol>
     </nav>
-    <h1 class="heading">Decimal to Binary Converter</h1>
+    <h1 class="heading">Hexadecimal to Binary Converter</h1>
     <div class="container">
-        <label for="binaryInput">Enter a Decimal number:</label>
-        <input type="text" id="binaryInput" placeholder="Enter Decimal Number (eg: 10)">
+        <label for="binaryInput">Enter a binary number:</label>
+        <input type="text" id="hexInput" placeholder="Enter HexaDecimal Number">
         <div class="btns">
-            <button class="btn btn-success" onclick="convertDecimalToBinary()">=Convert</button>
+            <button class="btn btn-success" onclick="convertHexToBinary()">=Convert</button>
             <button class="btn btn-success" id="reset">×Reset</button>
             <button class="btn btn-success" id="swap">⇅Swap</button>
-
         </div>
-        <textarea name="" id="hexOutput" cols="1" rows="1"></textarea>
-
+        <textarea name="" id="binaryOutput" cols="1" rows="1"></textarea>
     </div>
 
     <script>
-        function convertDecimalToBinary() {
-            const decimalInput = document.getElementById("binaryInput").value;
+        function convertHexToBinary() {
+            const hex = document.getElementById("hexInput").value;
+            // Remove any leading "0x" or "#" from the hex string
+            const cleanedHex = hex.replace(/^0x|^#/, "");
 
-            // Validate if the input is a valid decimal number
-            if (!/^[0-9]+$/.test(decimalInput)) {
-                alert("Please enter a valid decimal number.");
-                return;
+            // Convert each hexadecimal digit to its binary representation
+            let binary = "";
+            for (let i = 0; i < cleanedHex.length; i++) {
+                const digit = parseInt(cleanedHex[i], 16);
+                binary += digit.toString(2).padStart(4, "0");
             }
 
-            // Convert decimal to binary
-            const binary = parseInt(decimalInput, 10).toString(2);
-
-            document.getElementById("hexOutput").textContent = binary;
-        }
-
-        function validateBinaryInput() {
-            const binaryInput = document.getElementById("binaryInput").value;
-            if (!/^[0-9]+$/.test(binaryInput)) {
-                alert("Please enter a valid decimal number.");
-                document.getElementById("binaryInput").value = "";
-            }
+            document.getElementById("binaryOutput").textContent = binary;
         }
 
         document.getElementById("reset").addEventListener("click", function () {
-            document.getElementById("binaryInput").value = "";
-            document.getElementById("hexOutput").textContent = "";
+            document.getElementById("hexInput").value = "";
         });
 
         document.getElementById("swap").addEventListener("click", function () {
-            window.location.href = "./Binary-to-Decimal-Converter.html";
+            window.location.href = "./Binary-to-Hexadecimal-Converter.html";
         });
     </script>
-
 </body>
 
 </html>

@@ -36,7 +36,7 @@
             <img src="./calculator.png" alt="">
         </div>
         <div class="nav-element">
-            <h4><a href="./index.html">Home <i class="uil uil-home"></i><span></span></a></h4>
+            <h4><a href="./index.html">Home <i class="fa fa-home"></i><span></span></a></h4>
             <h4><a href="https://focusquest.netlify.app/portfolio">Contact <i class="uil uil-phone"></i></a></h4>
             <h4><a href="https://GitHub.com/Durgesh-vaigandla">GitHub <i class="uil uil-github-alt"></i></a></h4>
             <h4><a href="https://LinkedIn.com/in/vaigandladurgesh">LinkedIn <i class="uil uil-linkedin"></i></a></h4>
@@ -86,6 +86,7 @@
         <button id="DTBC" type="button" class="btn btn-light">Decimal to Binary converter</button>
         <button id="BTDC" type="button" class="btn btn-light">Binary to Decimal converter</button>
         <button id="BTHC" type="button" class="btn btn-light">Binary to HexaDecimal converter</button>
+        <button id="HTBC" type="button" class="btn btn-light">HexaDecimal to Binary converter</button>
     </div>
     <h1 style="display: flex; text-align: center; justify-content: center; margin-top: 20px;">Percentage Calculator</h1>
     <div class="converters">
@@ -111,6 +112,9 @@
         })
         document.getElementById("BTHC").addEventListener("click",function(event){
             window.location.href="./Binary-to-Hexadecimal-Converter.html"
+        })
+        document.getElementById("HTBC").addEventListener("click",function(event){
+            window.location.href="./Hexadecimal-to-Binary-Converter.html"
         })
     </script>
 </body>

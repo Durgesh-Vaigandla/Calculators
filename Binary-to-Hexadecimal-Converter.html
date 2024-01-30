@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="converter.css">
     <!--FonstAwsome-->
     <script src="https://kit.fontawesome.com/be1c87c3f5.js" crossorigin="anonymous"></script>
     <!--Unicons-->
@@ -21,10 +22,10 @@
     <div class="navbar">
         <div class="nav-bar">
             <h1>Calculator</h1>
-            <img src="./calculator.png" alt="">
+            <img src="./calculator.png" alt="Logo">
         </div>
         <div class="nav-element">
-            <h4><a href="./index.html">Home <i class="uil uil-home"></i><span></span></a></h4>
+            <h4><a href="./index.html">Home <i class="fa fa-home"></i><span></span></a></h4>
             <h4><a href="https://focusquest.netlify.app/portfolio">Contact <i class="uil uil-phone"></i></a></h4>
             <h4><a href="https://GitHub.com/Durgesh-vaigandla">GitHub <i class="uil uil-github-alt"></i></a></h4>
             <h4><a href="https://LinkedIn.com/in/vaigandladurgesh">LinkedIn <i class="uil uil-linkedin"></i></a></h4>
@@ -33,16 +34,23 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Binary To Decimal Converter</li>
+            <li class="breadcrumb-item active" aria-current="page">Binary to Hexadecimal Converter</li>
         </ol>
     </nav>
     <h1 class="heading">Binary to Hexadecimal Converter</h1>
+    <div class="container">
+        <label for="binaryInput">Enter a binary number:</label>
+        <input type="text" id="binaryInput" oninput="validateBinaryInput()"
+            placeholder="Enter Binary Number (0's and 1's)">
+        <div class="btns">
+            <button class="btn btn-success" onclick="convertBinaryToHex()">=Convert</button>
+            <button class="btn btn-success" id="reset">×Reset</button>
+            <button class="btn btn-success" id="swap">⇅Swap</button>
 
-    <label for="binaryInput">Enter a binary number:</label>
-    <input type="text" id="binaryInput" oninput="validateBinaryInput()" maxlength="8">
-    <button class="btn btn-success" onclick="convertBinaryToHex()">=Convert</button>
+        </div>
+        <textarea name="" id="hexOutput" cols="1" rows="1"></textarea>
 
-    <p id="hexOutput">Hexadecimal output will be displayed here.</p>
+    </div>
 
     <script>
         function validateBinaryInput() {
@@ -58,9 +66,21 @@
             var binaryInput = document.getElementById("binaryInput").value;
             var decimal = parseInt(binaryInput, 2);
             var hexadecimal = decimal.toString(16).toUpperCase();
-            document.getElementById("hexOutput").textContent = "Hexadecimal: " + hexadecimal;
+            document.getElementById("hexOutput").textContent = hexadecimal;
         }
+
+        document.getElementById("reset").addEventListener("click", function () {
+            document.getElementById("binaryInput").value = "";
+        });
+       
+        document.getElementById("swap").addEventListener("click", function () {
+            window.location.href = "./Hexadecimal-to-Binary-Converter.html";
+        });
     </script>
+</body>
+
+</html>
+</script>
 </body>
 
 </html>
